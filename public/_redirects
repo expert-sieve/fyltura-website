@@ -1,0 +1,16 @@
+# Cloudflare Pages redirects
+# https://developers.cloudflare.com/pages/platform/redirects/
+
+# Preserve old WordPress URLs if they differ
+# /old-url /new-url 301
+
+# Force trailing slashes (handled by Astro config, but backup here)
+/loesungen /loesungen/ 301
+/preise /preise/ 301
+/coding-tests /coding-tests/ 301
+/persoenlichkeitstest /persoenlichkeitstest/ 301
+/kontakt /kontakt/ 301
+/blog /blog/ 301
+/impressum /impressum/ 301
+/datenschutz /datenschutz/ 301
+/agb /agb/ 301

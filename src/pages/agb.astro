@@ -1,0 +1,43 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Section from '../components/Section.astro';
+import Button from '../components/Button.astro';
+---
+
+<Layout
+  title="AGB - FYLTURA"
+  description="Allgemeine Geschäftsbedingungen der Expert Sieve UG (haftungsbeschränkt)."
+  canonical="/agb/"
+>
+  <Section>
+    <div class="max-w-3xl mx-auto">
+      <h1 class="text-4xl font-bold mb-8">Allgemeine Geschäftsbedingungen</h1>
+
+      <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
+        <p class="text-gray-600 mb-6">
+          Unsere vollständigen Allgemeinen Geschäftsbedingungen können Sie als PDF herunterladen:
+        </p>
+
+        <Button
+          href="/documents/Expert_Sieve_AGB.pdf"
+          variant="primary"
+          target="_blank"
+        >
+          AGB als PDF herunterladen
+        </Button>
+
+        <div class="mt-8 pt-8 border-t border-gray-200">
+          <h2 class="text-xl font-bold mb-4">Kontakt bei Fragen</h2>
+          <p class="text-gray-600">
+            Bei Fragen zu unseren AGB erreichen Sie uns unter:<br /><br />
+            Expert Sieve UG (haftungsbeschränkt)<br />
+            Wilhelm-Raabe-Str. 6<br />
+            04416 Markkleeberg<br /><br />
+            Telefon: <a href="tel:+4934139294804" class="text-accent hover:underline">+49 341-39 29 48 04</a><br />
+            E-Mail: <a href="mailto:info@fyltura.de" class="text-accent hover:underline">info@fyltura.de</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </Section>
+</Layout>

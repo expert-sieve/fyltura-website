@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://fyltura.de/sitemap-index.xml
+
+# Disallow admin and API paths (if any)
+Disallow: /api/

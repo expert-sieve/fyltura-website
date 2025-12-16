@@ -1,0 +1,248 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Section from '../components/Section.astro';
+import Button from '../components/Button.astro';
+---
+
+<Layout
+  title="Coding Tests - FYLTURA | Objektive Bewertung technischer Fähigkeiten"
+  description="Mit FYLTURA Coding Tests zum perfekten Mitarbeiter. Praxisnahe Programmieraufgaben, Experten-Review und detaillierter Report. Java, Python, JavaScript und mehr."
+  canonical="/coding-tests/"
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-primary to-primary/90 text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">
+            Mit Coding Test zum perfekten Mitarbeiter
+          </h1>
+          <p class="text-xl text-gray-200 mb-8">
+            Effektive Personalauswahl ohne Risiko. Praxisnahe Programmieraufgaben zur objektiven
+            Bewertung technischer Fähigkeiten.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <Button href="https://app.onecal.io/b/fyltura/fyltura-kennenlernen" variant="primary" size="lg">
+              Demo buchen
+            </Button>
+            <div class="flex items-center gap-2 text-gray-200">
+              <span class="text-3xl font-bold text-white">169 €</span>
+              <span>/Test (netto)</span>
+            </div>
+          </div>
+        </div>
+        <div class="hidden md:block">
+          <img
+            src="/images/blog/coding.jpeg"
+            alt="Code auf Bildschirmen"
+            class="rounded-2xl shadow-2xl"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Languages -->
+  <Section bg="light">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Unterstützte Technologien</h2>
+      <p class="text-xl text-gray-600">Tests für alle gängigen Programmiersprachen und Frameworks</p>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-4">
+      {['Java', 'Python', 'JavaScript', 'TypeScript', 'React', 'Angular', 'C++', 'C#', 'PHP'].map((lang) => (
+        <span class="bg-white px-6 py-3 rounded-lg shadow-sm border border-gray-100 font-medium text-primary">
+          {lang}
+        </span>
+      ))}
+    </div>
+  </Section>
+
+  <!-- Process -->
+  <Section>
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Der Coding Test Prozess</h2>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        In 8 einfachen Schritten zur objektiven Bewertung
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {[
+        { step: '1', title: 'Test auswählen', desc: 'Wählen Sie den Test in der gewünschten Programmiersprache' },
+        { step: '2', title: 'Einladung senden', desc: 'FYLTURA generiert eine individuelle E-Mail mit Testlink' },
+        { step: '3', title: 'Remote bearbeiten', desc: 'Kandidat löst Aufgaben von zu Hause mit eigener IDE' },
+        { step: '4', title: 'Flexible Zeit', desc: '7 Tage Zeit für die Bearbeitung, 4-6h reine Arbeitszeit' },
+        { step: '5', title: 'Hohe Validität', desc: 'Praxisnahe Aufgaben für aussagekräftige Ergebnisse' },
+        { step: '6', title: 'Experten-Review', desc: 'Automatische + manuelle Prüfung innerhalb 48h' },
+        { step: '7', title: 'PDF-Report', desc: 'Detaillierte Auswertung per E-Mail' },
+        { step: '8', title: 'Positive Experience', desc: 'Strukturierter Prozess stärkt Ihre Arbeitgebermarke' },
+      ].map((item) => (
+        <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100">
+          <div class="w-10 h-10 bg-accent text-white rounded-full flex items-center justify-center font-bold mb-4">
+            {item.step}
+          </div>
+          <h3 class="font-semibold text-primary mb-2">{item.title}</h3>
+          <p class="text-gray-600 text-sm">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </Section>
+
+  <!-- Benefits -->
+  <Section bg="light">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Vorteile für alle Beteiligten</h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Management -->
+      <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+        <h3 class="font-bold text-lg mb-4 text-primary">Geschäftsführung</h3>
+        <ul class="space-y-2 text-gray-600 text-sm">
+          <li>• Schnellere Einstellung</li>
+          <li>• Geringeres Fehlbesetzungsrisiko</li>
+          <li>• Kosteneinsparung</li>
+          <li>• Stärkere Teams</li>
+          <li>• Bessere Arbeitgebermarke</li>
+        </ul>
+      </div>
+
+      <!-- Recruiters -->
+      <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+        <h3 class="font-bold text-lg mb-4 text-primary">Recruiter</h3>
+        <ul class="space-y-2 text-gray-600 text-sm">
+          <li>• Unabhängige Fachprüfung</li>
+          <li>• Objektive Entscheidungsbasis</li>
+          <li>• Zeitersparnis</li>
+          <li>• Professioneller Prozess</li>
+          <li>• Detaillierte Reports</li>
+        </ul>
+      </div>
+
+      <!-- Candidates -->
+      <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+        <h3 class="font-bold text-lg mb-4 text-primary">Kandidaten</h3>
+        <ul class="space-y-2 text-gray-600 text-sm">
+          <li>• Faire Leistungsbewertung</li>
+          <li>• Standardisiertes Verfahren</li>
+          <li>• Fähigkeiten zeigen</li>
+          <li>• Schnelles Feedback</li>
+          <li>• Positive Experience</li>
+        </ul>
+      </div>
+
+      <!-- Technical Teams -->
+      <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+        <h3 class="font-bold text-lg mb-4 text-primary">Fachbereiche</h3>
+        <ul class="space-y-2 text-gray-600 text-sm">
+          <li>• Fokus auf Top-Kandidaten</li>
+          <li>• Zeitersparnis</li>
+          <li>• Fundierte Gespräche</li>
+          <li>• Code-Einblick</li>
+          <li>• Qualitätssicherung</li>
+        </ul>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Features -->
+  <Section>
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Was macht unsere Coding Tests besonders?</h2>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-4">
+            <div class="w-8 h-8 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold mb-1">100% datenschutzkonform</h3>
+              <p class="text-gray-600">DSGVO-konforme Verarbeitung, gehostet in Deutschland</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <div class="w-8 h-8 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold mb-1">Eigene Entwicklungsumgebung</h3>
+              <p class="text-gray-600">Kandidaten arbeiten in ihrer gewohnten IDE</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <div class="w-8 h-8 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold mb-1">Pay-per-Test</h3>
+              <p class="text-gray-600">Keine Grundgebühren – Sie zahlen nur bei Durchführung</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <div class="w-8 h-8 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold mb-1">Kontinuierliche Optimierung</h3>
+              <p class="text-gray-600">Tests werden stetig weiterentwickelt und verbessert</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="bg-gray-100 rounded-xl p-8">
+        <div class="bg-white rounded-lg p-6 shadow-sm">
+          <h3 class="font-bold text-xl mb-4">Coding Test</h3>
+          <div class="text-4xl font-bold text-primary mb-2">169 €</div>
+          <p class="text-gray-500 mb-6">pro durchgeführtem Test (netto)</p>
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-center text-sm text-gray-600">
+              <svg class="w-4 h-4 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              Experten-Review
+            </li>
+            <li class="flex items-center text-sm text-gray-600">
+              <svg class="w-4 h-4 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              48h Lieferzeit
+            </li>
+            <li class="flex items-center text-sm text-gray-600">
+              <svg class="w-4 h-4 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              24/7 Support
+            </li>
+          </ul>
+          <Button href="https://app.onecal.io/b/fyltura/fyltura-kennenlernen" variant="primary" size="md" class="w-full">
+            Demo buchen
+          </Button>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- CTA -->
+  <Section bg="primary">
+    <div class="text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+        Überzeugen Sie sich selbst
+      </h2>
+      <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+        Vereinbaren Sie eine kostenlose Demo und sehen Sie, wie unsere Coding Tests funktionieren.
+      </p>
+      <Button href="https://app.onecal.io/b/fyltura/fyltura-kennenlernen" variant="primary" size="lg">
+        Demo buchen
+      </Button>
+    </div>
+  </Section>
+</Layout>

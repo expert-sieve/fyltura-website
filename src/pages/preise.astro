@@ -1,0 +1,215 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Section from '../components/Section.astro';
+import Button from '../components/Button.astro';
+---
+
+<Layout
+  title="Preise - FYLTURA | Pay-per-Test für Coding Tests & Persönlichkeitstests"
+  description="Transparente Preise bei FYLTURA. Coding Tests ab 169€, Persönlichkeitstests ab 39€. Sie zahlen nur, wenn der Kandidat den Test durchführt."
+  canonical="/preise/"
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-primary to-primary/90 text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">
+        Pay-per-Test
+      </h1>
+      <p class="text-xl text-gray-200 max-w-2xl mx-auto">
+        Sie zahlen nur, wenn der Kandidat den Test durchführt. Keine Grundgebühren, keine versteckten Kosten.
+      </p>
+    </div>
+  </section>
+
+  <!-- Pricing Cards -->
+  <Section bg="light">
+    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <!-- Coding Test -->
+      <div class="bg-white rounded-xl p-8 shadow-lg border-2 border-primary">
+        <div class="text-center mb-8">
+          <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+            </svg>
+          </div>
+          <h2 class="text-2xl font-bold mb-2">Coding Test</h2>
+          <div class="mt-4">
+            <span class="text-5xl font-bold text-primary">169 €</span>
+            <span class="text-gray-500">/Test (netto)</span>
+          </div>
+        </div>
+
+        <ul class="space-y-4 mb-8">
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-accent mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-gray-600">Praxisnahe Programmieraufgabe</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-accent mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-gray-600">Experten-Review des Codes</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-accent mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-gray-600">Detaillierter PDF-Report</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-accent mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-gray-600">Ergebnis innerhalb 48 Stunden</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-accent mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-gray-600">Quellcode immer zugänglich</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-accent mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-gray-600">Multiple Programmiersprachen</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-accent mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-gray-600">24/7 Support</span>
+          </li>
+        </ul>
+
+        <Button href="/coding-tests/" variant="secondary" size="lg" class="w-full">
+          Mehr erfahren
+        </Button>
+      </div>
+
+      <!-- Personality Test -->
+      <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-200">
+        <div class="text-center mb-8">
+          <div class="w-16 h-16 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+          <h2 class="text-2xl font-bold mb-2">Persönlichkeitstest</h2>
+          <div class="mt-4">
+            <span class="text-5xl font-bold text-primary">39 €</span>
+            <span class="text-gray-500">/Test (netto)</span>
+          </div>
+        </div>
+
+        <ul class="space-y-4 mb-8">
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-accent mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-gray-600">135 berufsbezogene Fragen</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-accent mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-gray-600">Basiert auf Big-Five-Modell</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-accent mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-gray-600">Ergebnis sofort nach Abschluss</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-accent mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-gray-600">Dauer ca. 20 Minuten</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-accent mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-gray-600">Kandidat erhält Ergebnis</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-accent mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-gray-600">Detaillierte Persönlichkeitsanalyse</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-accent mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-gray-600">Cultural Fit Assessment</span>
+          </li>
+        </ul>
+
+        <Button href="/persoenlichkeitstest/" variant="primary" size="lg" class="w-full">
+          Mehr erfahren
+        </Button>
+      </div>
+    </div>
+  </Section>
+
+  <!-- FAQ Section -->
+  <Section>
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12">Häufige Fragen</h2>
+
+      <div class="space-y-6">
+        <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100">
+          <h3 class="font-semibold text-lg mb-2">Wann wird abgerechnet?</h3>
+          <p class="text-gray-600">
+            Sie zahlen nur, wenn ein Kandidat den Test tatsächlich durchführt. Einladungen, die nicht
+            angenommen werden, kosten nichts.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100">
+          <h3 class="font-semibold text-lg mb-2">Gibt es Mengenrabatte?</h3>
+          <p class="text-gray-600">
+            Ja, bei höherem Testvolumen bieten wir individuelle Konditionen an. Kontaktieren Sie uns
+            für ein maßgeschneidertes Angebot.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100">
+          <h3 class="font-semibold text-lg mb-2">Welche Programmiersprachen werden unterstützt?</h3>
+          <p class="text-gray-600">
+            Wir unterstützen Java, Python, JavaScript, TypeScript (Angular, React), C++, PHP, C# und weitere.
+            Fragen Sie uns nach Ihrer gewünschten Sprache.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100">
+          <h3 class="font-semibold text-lg mb-2">Wie lange dauert ein Coding Test?</h3>
+          <p class="text-gray-600">
+            Kandidaten haben in der Regel 7 Tage Zeit, um den Test abzuschließen. Die reine Bearbeitungszeit
+            beträgt typischerweise 4-6 Stunden.
+          </p>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- CTA -->
+  <Section bg="primary">
+    <div class="text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+        Bereit loszulegen?
+      </h2>
+      <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+        Vereinbaren Sie eine kostenlose 30-minütige Demo und erfahren Sie, wie FYLTURA
+        Ihren Recruiting-Prozess verbessern kann.
+      </p>
+      <Button href="https://app.onecal.io/b/fyltura/fyltura-kennenlernen" variant="primary" size="lg">
+        Demo buchen
+      </Button>
+    </div>
+  </Section>
+</Layout>

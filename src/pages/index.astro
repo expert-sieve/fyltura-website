@@ -1,0 +1,279 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Section from '../components/Section.astro';
+import Button from '../components/Button.astro';
+import FeatureCard from '../components/FeatureCard.astro';
+import Testimonial from '../components/Testimonial.astro';
+---
+
+<Layout
+  title="FYLTURA - Coding Tests & Persönlichkeitstests für die Personalauswahl"
+  description="Mit FYLTURA treffen Sie objektive Personalentscheidungen. Coding Tests und Persönlichkeitstests für IT-Recruiting. 100% DSGVO-konform. Made in Germany."
+>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-primary to-primary/90 text-white py-20 md:py-32">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            Mit FYLTURA zum perfekten Match
+          </h1>
+          <p class="text-xl md:text-2xl text-gray-200 mb-8">
+            Reduzieren Sie Fehlbesetzungen und gewinnen Sie Top-Talente durch datenbasierte Assessments mit Coding Tests und Persönlichkeitstests.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <Button href="https://app.onecal.io/b/fyltura/fyltura-kennenlernen" variant="primary" size="lg">
+              Demo buchen
+            </Button>
+            <Button href="/loesungen/" variant="outline" size="lg" class="border-white text-white hover:bg-white hover:text-primary">
+              Mehr erfahren
+            </Button>
+          </div>
+        </div>
+        <div class="hidden md:block">
+          <img
+            src="/images/hero-team.jpg"
+            alt="Erfolgreiches Business Team"
+            class="rounded-2xl shadow-2xl"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Overview -->
+  <Section bg="light">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Warum FYLTURA?</h2>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        Eine Plattform für objektive und faire Personalentscheidungen
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <FeatureCard
+        icon="🎯"
+        title="Objektive Bewertung"
+        description="Coding und Persönlichkeitstests in einer Plattform für eine umfassende Kandidatenbewertung ohne Bias."
+      />
+      <FeatureCard
+        icon="⚡"
+        title="Schneller Support"
+        description="Kostenloser Kundenservice für ein nahtloses Assessment-Erlebnis. Wir sind für Sie da."
+      />
+      <FeatureCard
+        icon="🔒"
+        title="100% DSGVO-konform"
+        description="Ihre Daten sind bei uns sicher. Vollständig datenschutzkonforme Verarbeitung nach deutschen Standards."
+      />
+      <FeatureCard
+        icon="🇩🇪"
+        title="Made in Germany"
+        description="Entwickelt und gehostet in Deutschland. Höchste Qualitätsstandards für Ihre Personalauswahl."
+      />
+      <FeatureCard
+        icon="🏠"
+        title="100% Remote"
+        description="Kandidaten können Tests von überall absolvieren – flexibel und bequem von zu Hause."
+      />
+      <FeatureCard
+        icon="😊"
+        title="Positive Candidate Experience"
+        description="Faire, transparente Prozesse stärken Ihre Arbeitgebermarke und hinterlassen einen guten Eindruck."
+      />
+    </div>
+  </Section>
+
+  <!-- Products Section -->
+  <Section>
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Unsere Produkte</h2>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        Zwei leistungsstarke Tools für Ihre Personalauswahl
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <!-- Coding Tests -->
+      <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-100">
+        <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+          <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold mb-4">Coding Tests</h3>
+        <p class="text-gray-600 mb-6">
+          Praxisnahe Programmieraufgaben zur objektiven Bewertung technischer Fähigkeiten. Unterstützt Java, Python, JavaScript, TypeScript, C++, PHP und mehr.
+        </p>
+        <ul class="space-y-2 mb-6">
+          <li class="flex items-center text-gray-600">
+            <svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            Experten-Review innerhalb 48h
+          </li>
+          <li class="flex items-center text-gray-600">
+            <svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            Detaillierter PDF-Report
+          </li>
+          <li class="flex items-center text-gray-600">
+            <svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            Kandidaten nutzen eigene IDE
+          </li>
+        </ul>
+        <div class="flex items-center justify-between">
+          <span class="text-2xl font-bold text-primary">169 €<span class="text-sm font-normal text-gray-500">/Test</span></span>
+          <Button href="/coding-tests/" variant="secondary" size="sm">
+            Mehr erfahren
+          </Button>
+        </div>
+      </div>
+
+      <!-- Personality Tests -->
+      <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-100">
+        <div class="w-16 h-16 bg-accent/10 rounded-xl flex items-center justify-center mb-6">
+          <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold mb-4">Persönlichkeitstest</h3>
+        <p class="text-gray-600 mb-6">
+          Wissenschaftlich fundierter Big-Five-Test zur Einschätzung der Persönlichkeit. Erkennen Sie Cultural Fit und Entwicklungspotenzial.
+        </p>
+        <ul class="space-y-2 mb-6">
+          <li class="flex items-center text-gray-600">
+            <svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            135 berufsbezogene Fragen
+          </li>
+          <li class="flex items-center text-gray-600">
+            <svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            Ergebnis in ca. 20 Minuten
+          </li>
+          <li class="flex items-center text-gray-600">
+            <svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            Kandidaten erhalten Ergebnis
+          </li>
+        </ul>
+        <div class="flex items-center justify-between">
+          <span class="text-2xl font-bold text-primary">39 €<span class="text-sm font-normal text-gray-500">/Test</span></span>
+          <Button href="/persoenlichkeitstest/" variant="primary" size="sm">
+            Mehr erfahren
+          </Button>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Process Section -->
+  <Section bg="light">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">So funktioniert's</h2>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        Ein einfacher Prozess für bessere Einstellungsentscheidungen
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-4 gap-8">
+      <div class="text-center">
+        <div class="w-12 h-12 bg-accent text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">1</div>
+        <h3 class="font-semibold mb-2">Test auswählen</h3>
+        <p class="text-gray-600 text-sm">Wählen Sie den passenden Test für Ihre Stelle</p>
+      </div>
+      <div class="text-center">
+        <div class="w-12 h-12 bg-accent text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">2</div>
+        <h3 class="font-semibold mb-2">Kandidaten einladen</h3>
+        <p class="text-gray-600 text-sm">Senden Sie die Einladung per E-Mail</p>
+      </div>
+      <div class="text-center">
+        <div class="w-12 h-12 bg-accent text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">3</div>
+        <h3 class="font-semibold mb-2">Test absolvieren</h3>
+        <p class="text-gray-600 text-sm">Kandidat löst die Aufgaben remote</p>
+      </div>
+      <div class="text-center">
+        <div class="w-12 h-12 bg-accent text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">4</div>
+        <h3 class="font-semibold mb-2">Report erhalten</h3>
+        <p class="text-gray-600 text-sm">Detaillierte Auswertung als PDF</p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Testimonials -->
+  <Section>
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Das sagen unsere Kunden</h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <Testimonial
+        quote="FYLTURA hat unseren Recruiting-Prozess revolutioniert. Die Coding Tests geben uns ein objektives Bild der technischen Fähigkeiten."
+        author="HR Manager"
+        role="Head of HR"
+        company="ExB Group"
+      />
+      <Testimonial
+        quote="Durch den Persönlichkeitstest können wir besser einschätzen, ob ein Kandidat ins Team passt. Das spart Zeit und Geld."
+        author="Recruiting Team"
+        role="Talent Acquisition"
+        company="VEDA"
+      />
+    </div>
+  </Section>
+
+  <!-- About Section -->
+  <Section bg="light">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Über FYLTURA</h2>
+        <p class="text-gray-600 mb-4">
+          FYLTURA wurde von Anne-Cathrin und Christoph Becker gegründet, um Unternehmen bei der
+          objektiven Personalauswahl zu unterstützen.
+        </p>
+        <p class="text-gray-600 mb-6">
+          Unser Ziel: Faire, datenbasierte Einstellungsentscheidungen, die sowohl für Unternehmen
+          als auch für Kandidaten einen Mehrwert bieten.
+        </p>
+        <Button href="https://app.onecal.io/b/fyltura/fyltura-kennenlernen">
+          Lernen Sie uns kennen
+        </Button>
+      </div>
+      <div class="relative">
+        <img
+          src="/images/about-section.png"
+          alt="FYLTURA Assessment Platform"
+          class="rounded-xl shadow-lg"
+        />
+        <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-lg hidden md:block">
+          <div class="text-center">
+            <p class="text-4xl font-bold text-accent mb-1">100%</p>
+            <p class="text-gray-600 text-sm">DSGVO-konform</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- CTA Section -->
+  <Section bg="primary">
+    <div class="text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+        Bereit für bessere Einstellungsentscheidungen?
+      </h2>
+      <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+        Vereinbaren Sie eine kostenlose Demo und erfahren Sie, wie FYLTURA Ihren Recruiting-Prozess verbessern kann.
+      </p>
+      <Button href="https://app.onecal.io/b/fyltura/fyltura-kennenlernen" variant="primary" size="lg">
+        Kostenlose Demo buchen
+      </Button>
+    </div>
+  </Section>
+</Layout>

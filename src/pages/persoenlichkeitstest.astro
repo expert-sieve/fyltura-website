@@ -1,0 +1,227 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Section from '../components/Section.astro';
+import Button from '../components/Button.astro';
+---
+
+<Layout
+  title="Persönlichkeitstest - FYLTURA | Big Five Assessment für HR"
+  description="FYLTURA Persönlichkeitstest basierend auf dem Big Five Modell. 135 berufsbezogene Fragen, Ergebnis in 20 Minuten. Objektive Einschätzung von Cultural Fit."
+  canonical="/persoenlichkeitstest/"
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-primary to-primary/90 text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">
+            Erhalten Sie Einblick in das wahre Potential Ihrer Kandidaten
+          </h1>
+          <p class="text-xl text-gray-200 mb-8">
+            Unser wissenschaftlich fundierter Persönlichkeitstest hilft Ihnen, die beste Passung
+            für Ihre Stellen und Ihr Team zu finden.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <Button href="https://app.onecal.io/b/fyltura/fyltura-kennenlernen" variant="primary" size="lg">
+              Demo buchen
+            </Button>
+            <div class="flex items-center gap-2 text-gray-200">
+              <span class="text-3xl font-bold text-white">39 €</span>
+              <span>/Test (netto)</span>
+            </div>
+          </div>
+        </div>
+        <div class="hidden md:block">
+          <img
+            src="/images/tablet-woman.png"
+            alt="Bewerberin mit Tablet"
+            class="rounded-2xl shadow-2xl"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Big Five Model -->
+  <Section bg="light">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Das Big Five Modell</h2>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        Unser Test basiert auf dem wissenschaftlich anerkannten Big Five Persönlichkeitsmodell
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
+      {[
+        {
+          name: 'Offenheit',
+          desc: 'Bereitschaft für neue Erfahrungen und Ideen',
+          color: 'bg-blue-500'
+        },
+        {
+          name: 'Gewissenhaftigkeit',
+          desc: 'Systematisches Vorgehen und Zielorientierung',
+          color: 'bg-green-500'
+        },
+        {
+          name: 'Extraversion',
+          desc: 'Soziale Interaktion und Aktivitätslevel',
+          color: 'bg-yellow-500'
+        },
+        {
+          name: 'Verträglichkeit',
+          desc: 'Kooperation und Einfühlungsvermögen',
+          color: 'bg-purple-500'
+        },
+        {
+          name: 'Neurotizismus',
+          desc: 'Emotionale Stabilität und Belastbarkeit',
+          color: 'bg-red-500'
+        },
+      ].map((trait) => (
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 text-center">
+          <div class={`w-12 h-12 ${trait.color} rounded-full mx-auto mb-4`}></div>
+          <h3 class="font-bold text-lg mb-2">{trait.name}</h3>
+          <p class="text-gray-600 text-sm">{trait.desc}</p>
+        </div>
+      ))}
+    </div>
+  </Section>
+
+  <!-- Why Personality Tests -->
+  <Section>
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Warum Persönlichkeitstests?</h2>
+        <p class="text-gray-600 mb-4">
+          Herkömmliche Auswahlmethoden führen oft zu Fehlentscheidungen, weil sie auf subjektiven
+          Eindrücken basieren. Sympathie und unbewusste Vorurteile beeinflussen die Bewertung.
+        </p>
+        <p class="text-gray-600 mb-6">
+          Unser Persönlichkeitstest liefert objektive, wissenschaftlich fundierte Daten, die Ihnen
+          helfen, die richtige Entscheidung zu treffen – für Ihr Unternehmen und für den Kandidaten.
+        </p>
+        <ul class="space-y-3">
+          <li class="flex items-center text-gray-600">
+            <svg class="w-5 h-5 text-accent mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            Objektive Entscheidungsgrundlage
+          </li>
+          <li class="flex items-center text-gray-600">
+            <svg class="w-5 h-5 text-accent mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            Reduzierte Fehlbesetzungen
+          </li>
+          <li class="flex items-center text-gray-600">
+            <svg class="w-5 h-5 text-accent mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            Besserer Cultural Fit
+          </li>
+        </ul>
+      </div>
+      <div class="bg-gray-100 rounded-xl p-8">
+        <div class="bg-white rounded-lg p-6 shadow-sm">
+          <h3 class="font-bold text-xl mb-4">Persönlichkeitstest</h3>
+          <div class="text-4xl font-bold text-primary mb-2">39 €</div>
+          <p class="text-gray-500 mb-6">pro durchgeführtem Test (netto)</p>
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-center text-sm text-gray-600">
+              <svg class="w-4 h-4 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              135 Fragen
+            </li>
+            <li class="flex items-center text-sm text-gray-600">
+              <svg class="w-4 h-4 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              ~20 Min. Dauer
+            </li>
+            <li class="flex items-center text-sm text-gray-600">
+              <svg class="w-4 h-4 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              Sofortiges Ergebnis
+            </li>
+          </ul>
+          <Button href="https://app.onecal.io/b/fyltura/fyltura-kennenlernen" variant="primary" size="md" class="w-full">
+            Demo buchen
+          </Button>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Process -->
+  <Section bg="light">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">So einfach funktioniert's</h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+      <div class="text-center">
+        <div class="w-16 h-16 bg-accent text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
+        <h3 class="font-semibold text-lg mb-2">Stelle anlegen</h3>
+        <p class="text-gray-600">Erstellen Sie eine Stelle mit Persönlichkeitstest in Ihrem Dashboard</p>
+      </div>
+      <div class="text-center">
+        <div class="w-16 h-16 bg-accent text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
+        <h3 class="font-semibold text-lg mb-2">Kandidaten einladen</h3>
+        <p class="text-gray-600">Fügen Sie Kandidaten hinzu und senden Sie die Testeinladung</p>
+      </div>
+      <div class="text-center">
+        <div class="w-16 h-16 bg-accent text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
+        <h3 class="font-semibold text-lg mb-2">Ergebnisse erhalten</h3>
+        <p class="text-gray-600">Detaillierte Persönlichkeitsanalyse sofort nach Testabschluss</p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Blog Teaser -->
+  <Section>
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Mehr zum Thema Persönlichkeit</h2>
+      <p class="text-xl text-gray-600">
+        Erfahren Sie mehr über die einzelnen Persönlichkeitsdimensionen in unserem Blog
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {[
+        'Gewissenhaftigkeit und ihre Subfacetten',
+        'Neurotizismus verstehen',
+        'Extraversion im Beruf',
+      ].map((title) => (
+        <a href="/blog/" class="bg-white rounded-lg p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+          <h3 class="font-semibold text-primary mb-2">{title}</h3>
+          <p class="text-gray-600 text-sm mb-4">Wissenschaftliche Hintergründe und praktische Anwendung im Recruiting...</p>
+          <span class="text-accent font-medium text-sm">Weiterlesen →</span>
+        </a>
+      ))}
+    </div>
+
+    <div class="text-center mt-8">
+      <Button href="/blog/" variant="outline">
+        Alle Artikel lesen
+      </Button>
+    </div>
+  </Section>
+
+  <!-- CTA -->
+  <Section bg="primary">
+    <div class="text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+        Lernen Sie Ihre Kandidaten wirklich kennen
+      </h2>
+      <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+        Vereinbaren Sie eine Demo und sehen Sie einen Beispiel-Report.
+      </p>
+      <Button href="https://app.onecal.io/b/fyltura/fyltura-kennenlernen" variant="primary" size="lg">
+        Demo buchen
+      </Button>
+    </div>
+  </Section>
+</Layout>

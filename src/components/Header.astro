@@ -1,0 +1,135 @@
+---
+const navigation = [
+  { name: 'Start', href: '/' },
+  { name: 'Lösungen', href: '/loesungen/' },
+  { name: 'Preise', href: '/preise/' },
+  {
+    name: 'Produkte',
+    children: [
+      { name: 'Coding Tests', href: '/coding-tests/' },
+      { name: 'Persönlichkeitstest', href: '/persoenlichkeitstest/' },
+    ]
+  },
+  { name: 'Blog', href: '/blog/' },
+  { name: 'Kontakt', href: '/kontakt/' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="bg-white shadow-sm sticky top-0 z-50">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <a href="/" class="flex items-center">
+        <img src="/images/fyltura_logo.svg" alt="FYLTURA" class="h-8 w-auto" />
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-8">
+        {navigation.map((item) => (
+          item.children ? (
+            <div class="relative group">
+              <button class="text-gray-700 hover:text-primary font-medium flex items-center gap-1">
+                {item.name}
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <div class="py-2">
+                  {item.children.map((child) => (
+                    <a
+                      href={child.href}
+                      class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary"
+                    >
+                      {child.name}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ) : (
+            <a
+              href={item.href}
+              class:list={[
+                'font-medium transition-colors',
+                currentPath === item.href ? 'text-primary' : 'text-gray-700 hover:text-primary'
+              ]}
+            >
+              {item.name}
+            </a>
+          )
+        ))}
+
+        <a
+          href="https://app.fyltura.de"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-primary text-white px-4 py-2 rounded-md font-medium hover:bg-primary/90 transition-colors"
+        >
+          Login
+        </a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button
+        id="mobile-menu-button"
+        class="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100"
+        aria-label="Menü öffnen"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div id="mobile-menu" class="hidden md:hidden pb-4">
+      <div class="space-y-2">
+        {navigation.map((item) => (
+          item.children ? (
+            <div class="space-y-1">
+              <span class="block px-3 py-2 text-gray-500 font-medium">{item.name}</span>
+              {item.children.map((child) => (
+                <a
+                  href={child.href}
+                  class="block px-6 py-2 text-gray-700 hover:bg-gray-100 rounded-md"
+                >
+                  {child.name}
+                </a>
+              ))}
+            </div>
+          ) : (
+            <a
+              href={item.href}
+              class:list={[
+                'block px-3 py-2 rounded-md font-medium',
+                currentPath === item.href ? 'text-primary bg-gray-100' : 'text-gray-700 hover:bg-gray-100'
+              ]}
+            >
+              {item.name}
+            </a>
+          )
+        ))}
+        <a
+          href="https://app.fyltura.de"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="block px-3 py-2 bg-primary text-white rounded-md font-medium text-center mt-4"
+        >
+          Login
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const button = document.getElementById('mobile-menu-button');
+  const menu = document.getElementById('mobile-menu');
+
+  button?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+  });
+</script>

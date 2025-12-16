@@ -1,0 +1,218 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Section from '../components/Section.astro';
+import Button from '../components/Button.astro';
+import FeatureCard from '../components/FeatureCard.astro';
+---
+
+<Layout
+  title="Lösungen - FYLTURA | Effektive Personalauswahl für Ihr Unternehmen"
+  description="Mit FYLTURA zum perfekten Match. Reduzieren Sie Fehlbesetzungen durch datenbasierte Coding Tests und Persönlichkeitstests. Für HR, Recruiter und Fachbereiche."
+  canonical="/loesungen/"
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-primary to-primary/90 text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">
+          Mit FYLTURA zum perfekten Match
+        </h1>
+        <p class="text-xl text-gray-200 mb-8">
+          Reduzieren Sie Fehlbesetzungen und gewinnen Sie Top-Talente für Ihr Unternehmen durch
+          datenbasierte Assessments mit Coding Tests und Persönlichkeitstests.
+        </p>
+        <Button href="https://app.onecal.io/b/fyltura/fyltura-kennenlernen" variant="primary" size="lg">
+          Demo buchen
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Value Proposition -->
+  <Section bg="light">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Eine Plattform, alle Vorteile</h2>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        Coding und Persönlichkeitstests vereint für umfassende Kandidatenbewertung
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <FeatureCard
+        icon="🎯"
+        title="Umfassende Bewertung"
+        description="Coding und Persönlichkeitstests in einer Plattform für eine vollständige Kandidatenbewertung."
+      />
+      <FeatureCard
+        icon="⚡"
+        title="Schneller Support"
+        description="Kostenloser Kundenservice für ein nahtloses Assessment-Erlebnis."
+      />
+      <FeatureCard
+        icon="🔒"
+        title="100% DSGVO-konform"
+        description="Vollständig datenschutzkonforme Datenverarbeitung nach deutschen Standards."
+      />
+      <FeatureCard
+        icon="🇩🇪"
+        title="Made in Germany"
+        description="Entwickelt und gehostet in Deutschland mit höchsten Qualitätsstandards."
+      />
+      <FeatureCard
+        icon="🏠"
+        title="100% Remote"
+        description="Kandidaten können Tests von überall absolvieren – flexibel und bequem."
+      />
+      <FeatureCard
+        icon="😊"
+        title="Positive Candidate Experience"
+        description="Faire, transparente Prozesse stärken Ihre Arbeitgebermarke."
+      />
+    </div>
+  </Section>
+
+  <!-- Benefits by Stakeholder -->
+  <Section>
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Vorteile für alle Beteiligten</h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Management -->
+      <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-100">
+        <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+          <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold mb-4">Für die Geschäftsführung</h3>
+        <ul class="space-y-3 text-gray-600">
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-accent mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            Kosten durch Fehlbesetzungen vermeiden
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-accent mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            Arbeitgebermarke stärken durch effiziente Prozesse
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-accent mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            Langfristige Verbesserung durch datenbasierte Erkenntnisse
+          </li>
+        </ul>
+      </div>
+
+      <!-- HR/Recruiter -->
+      <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-100">
+        <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6">
+          <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold mb-4">Für HR & Recruiter</h3>
+        <ul class="space-y-3 text-gray-600">
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-accent mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            Qualifizierte Vorauswahl technischer Kompetenzen
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-accent mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            Automatisierte Aufgabenverteilung und Auswertung
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-accent mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            Detaillierte Reports innerhalb 48 Stunden
+          </li>
+        </ul>
+      </div>
+
+      <!-- Technical Teams -->
+      <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-100">
+        <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+          <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold mb-4">Für Fachbereiche</h3>
+        <ul class="space-y-3 text-gray-600">
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-accent mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            Zeit und interne Ressourcen sparen
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-accent mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            Innovation durch neue Skill-Sets fördern
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-accent mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            Kandidaten schätzen faire Coding Tests
+          </li>
+        </ul>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Workflow -->
+  <Section bg="light">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Der FYLTURA Workflow</h2>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        Ein strukturierter Prozess für bessere Einstellungsentscheidungen
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {[
+        { step: '1', title: 'Intro Call mit HR', desc: 'Kennenlerngespräch und erste Einschätzung' },
+        { step: '2', title: 'Persönlichkeitstest', desc: 'Optional: Big-Five-Assessment' },
+        { step: '3', title: 'Vorbereitung', desc: 'Optional: Video-Call zur Testvorbereitung' },
+        { step: '4', title: 'Coding Test', desc: 'Kandidat absolviert praxisnahe Aufgaben' },
+        { step: '5', title: 'Fachinterview', desc: 'Technisches Gespräch basierend auf Ergebnissen' },
+        { step: '6', title: 'Finale Gespräche', desc: 'Vertragsverhandlungen und Einstellung' },
+      ].map((item) => (
+        <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100 flex items-start gap-4">
+          <div class="w-10 h-10 bg-accent text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">
+            {item.step}
+          </div>
+          <div>
+            <h3 class="font-semibold text-primary mb-1">{item.title}</h3>
+            <p class="text-gray-600 text-sm">{item.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </Section>
+
+  <!-- CTA -->
+  <Section bg="primary">
+    <div class="text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+        Überzeugen Sie sich selbst
+      </h2>
+      <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+        Vereinbaren Sie eine kostenlose 30-minütige Demo mit unseren Experten.
+      </p>
+      <Button href="https://app.onecal.io/b/fyltura/fyltura-kennenlernen" variant="primary" size="lg">
+        Demo buchen
+      </Button>
+    </div>
+  </Section>
+</Layout>
