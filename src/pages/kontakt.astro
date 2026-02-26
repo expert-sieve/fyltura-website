@@ -101,54 +101,28 @@ import Section from '../components/Section.astro';
         </div>
       </div>
 
-      <!-- HubSpot Form Placeholder -->
+      <!-- Contact Form -->
       <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-100">
-        <h2 class="text-2xl font-bold mb-6">Demo buchen</h2>
+        <h2 class="text-2xl font-bold mb-6">Kontaktformular</h2>
         <p class="text-gray-600 mb-6">
           Füllen Sie das Formular aus und wir melden uns zeitnah bei Ihnen.
         </p>
 
-        <!-- HubSpot Form Container -->
-        <div id="hubspot-form" class="min-h-[400px]">
-          <!-- HubSpot form will be embedded here -->
-          <div class="text-center py-12 text-gray-500">
-            <p class="mb-4">Kontaktformular wird geladen...</p>
-            <noscript>
-              <p>Bitte aktivieren Sie JavaScript, um das Kontaktformular zu nutzen.</p>
-              <p class="mt-4">
-                Alternativ erreichen Sie uns unter:<br />
-                <a href="mailto:kontakt@fyltura.de" class="text-accent">kontakt@fyltura.de</a>
-              </p>
-            </noscript>
-          </div>
-        </div>
-
-        <!-- Fallback contact info -->
-        <div class="mt-6 pt-6 border-t border-gray-100 text-center text-sm text-gray-500">
-          <p>
-            Oder buchen Sie direkt einen Termin:<br />
-            <a
-              href="https://calendar.app.google/ufTeprSNtGCdtTUGA"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-accent hover:underline font-medium"
-            >
-              Termin buchen
-            </a>
-          </p>
+        <!-- Google Form -->
+        <div class="flex justify-center">
+          <a
+            href="https://forms.gle/8XMVrcQEu934cUUB9"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 bg-accent text-white font-semibold py-3 px-8 rounded-lg hover:bg-accent/90 transition-colors text-lg"
+          >
+            Zum Kontaktformular
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
         </div>
       </div>
     </div>
   </Section>
 </Layout>
-
-<script>
-  // HubSpot form embedding script placeholder
-  // Replace with your actual HubSpot form embed code
-  // Example:
-  // hbspt.forms.create({
-  //   portalId: "YOUR_PORTAL_ID",
-  //   formId: "YOUR_FORM_ID",
-  //   target: "#hubspot-form"
-  // });
-</script>
