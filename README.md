@@ -101,7 +101,7 @@ All URLs match the original site for SEO preservation:
 
 ## External Services
 
-- **Demo Booking**: [OneCal](https://app.onecal.io/b/fyltura/fyltura-kennenlernen)
+- **Demo Booking**: [Google Calendar](https://calendar.app.google/ufTeprSNtGCdtTUGA)
 - **App**: [app.fyltura.de](https://app.fyltura.de)
 
 ## License
