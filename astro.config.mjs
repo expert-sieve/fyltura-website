@@ -19,6 +19,7 @@ export default defineConfig({
       serialize(item) {
         const lastmodByUrl = {
           'https://fyltura.de/blog/die-big-five-das-geruest-unserer-persoenlichkeit/': '2026-05-06',
+          'https://fyltura.de/blog/das-verkannte-potenzial-von-persoenlichkeitstests-fuer-die-personalauswahl/': '2026-05-06',
         };
         const lastmod = lastmodByUrl[item.url];
         if (lastmod) return { ...item, lastmod };
