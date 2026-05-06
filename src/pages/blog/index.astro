@@ -4,7 +4,11 @@ import Layout from '../../layouts/Layout.astro';
 import Section from '../../components/Section.astro';
 
 const posts = (await getCollection('blog', ({ data }) => !data.draft))
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+  .sort((a, b) => {
+    const aDate = (a.data.updatedDate ?? a.data.pubDate).valueOf();
+    const bDate = (b.data.updatedDate ?? b.data.pubDate).valueOf();
+    return bDate - aDate;
+  });
 
 // Get unique categories with counts
 const categories = ['Alle', ...new Set(posts.map(p => p.data.category))];
@@ -127,13 +131,23 @@ const categoryColors: Record<string, string> = {
                   {post.data.description}
                 </p>
                 <div class="flex items-center justify-between">
-                  <time datetime={post.data.pubDate.toISOString()} class="text-xs text-gray-400">
-                    {post.data.pubDate.toLocaleDateString('de-DE', {
-                      year: 'numeric',
-                      month: 'short',
-                      day: 'numeric'
-                    })}
-                  </time>
+                  {post.data.updatedDate ? (
+                    <time datetime={post.data.updatedDate.toISOString()} class="text-xs text-gray-400">
+                      Aktualisiert: {post.data.updatedDate.toLocaleDateString('de-DE', {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric'
+                      })}
+                    </time>
+                  ) : (
+                    <time datetime={post.data.pubDate.toISOString()} class="text-xs text-gray-400">
+                      {post.data.pubDate.toLocaleDateString('de-DE', {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric'
+                      })}
+                    </time>
+                  )}
                   <a
                     href={`/blog/${post.id}/`}
                     class="inline-flex items-center gap-1 text-accent font-semibold text-sm group-hover:gap-2 transition-all"
