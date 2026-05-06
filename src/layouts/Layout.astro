@@ -56,6 +56,8 @@ const canonicalUrl = canonical ? `${siteUrl}${canonical}` : Astro.url.href;
 
     <meta name="generator" content={Astro.generator} />
 
+    <slot name="head" />
+
     <!-- Pirsch Analytics -->
     <script defer src="https://api.pirsch.io/pa.js" id="pianjs" data-code="5AK73PDqLhaA4CDKNrtUQojs4EkHrdIr"></script>
   </head>
