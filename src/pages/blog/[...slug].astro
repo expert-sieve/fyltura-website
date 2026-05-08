@@ -3,6 +3,7 @@ import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import Section from '../../components/Section.astro';
 import Button from '../../components/Button.astro';
+import EmailSignupForm from '../../components/EmailSignupForm.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => !data.draft);
@@ -130,62 +131,226 @@ const icon = categoryIcons[post.data.category] || categoryIcons['default'];
       </div>
     )}
 
-    <!-- Content -->
+    <!-- Content + Sidebar -->
     <Section>
-      <div class="max-w-3xl mx-auto">
-        <div class="prose prose-lg max-w-none
-          prose-headings:text-primary prose-headings:font-bold
-          prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-h2:pb-2 prose-h2:border-b prose-h2:border-gray-200
-          prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
-          prose-p:text-gray-700 prose-p:leading-relaxed
-          prose-a:text-accent prose-a:font-medium prose-a:no-underline hover:prose-a:underline
-          prose-strong:text-primary prose-strong:font-semibold
-          prose-ul:my-6 prose-li:my-2
-          prose-blockquote:border-l-4 prose-blockquote:border-accent prose-blockquote:bg-gray-50 prose-blockquote:py-1 prose-blockquote:px-6 prose-blockquote:rounded-r-lg prose-blockquote:not-italic
-        ">
-          <Content />
-        </div>
+      <div class="max-w-6xl mx-auto">
+        <div class="lg:grid lg:grid-cols-[1fr_300px] lg:gap-12">
 
-        <!-- Author & Share -->
-        <div class="mt-12 pt-8 border-t border-gray-200">
-          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-            <div class="flex items-center gap-4">
-              <div class="w-12 h-12 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center text-white font-bold text-lg">
-                {post.data.author.charAt(0)}
-              </div>
-              <div>
-                <p class="font-semibold text-primary">{post.data.author}</p>
-                <p class="text-sm text-gray-500">Experten für Eignungsdiagnostik</p>
+          <!-- Main content -->
+          <div>
+            <div id="article-body" class="prose prose-lg max-w-none
+              prose-headings:text-primary prose-headings:font-bold
+              prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-h2:pb-2 prose-h2:border-b prose-h2:border-gray-200
+              prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
+              prose-p:text-gray-700 prose-p:leading-relaxed
+              prose-a:text-accent prose-a:font-medium prose-a:no-underline hover:prose-a:underline
+              prose-strong:text-primary prose-strong:font-semibold
+              prose-ul:my-6 prose-li:my-2
+              prose-blockquote:border-l-4 prose-blockquote:border-accent prose-blockquote:bg-gray-50 prose-blockquote:py-1 prose-blockquote:px-6 prose-blockquote:rounded-r-lg prose-blockquote:not-italic
+            ">
+              <Content />
+            </div>
+
+            <!-- Author & Share -->
+            <div class="mt-12 pt-8 border-t border-gray-200">
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <div class="flex items-center gap-4">
+                  <div class="w-12 h-12 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                    {post.data.author.charAt(0)}
+                  </div>
+                  <div>
+                    <p class="font-semibold text-primary">{post.data.author}</p>
+                    <p class="text-sm text-gray-500">Experten für Eignungsdiagnostik</p>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
 
-        <!-- CTA -->
-        <div class="mt-12 p-8 md:p-10 bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl text-center border border-gray-100">
-          <div class="max-w-xl mx-auto">
-            <span class="text-4xl mb-4 block">🚀</span>
-            <h3 class="text-2xl font-bold text-primary mb-4">Interesse an unseren Tests?</h3>
-            <p class="text-gray-600 mb-8 leading-relaxed">
-              Vereinbaren Sie eine kostenlose Demo und erfahren Sie, wie FYLTURA
-              Ihren Recruiting-Prozess verbessern kann.
-            </p>
-            <Button href="https://calendar.app.google/ufTeprSNtGCdtTUGA" variant="primary">
-              Demo buchen
-            </Button>
-          </div>
-        </div>
+            <!-- Email signup form — end of post -->
+            <div class="mt-10">
+              <EmailSignupForm variant="inline" formId="signup-post-end" />
+            </div>
 
-        <!-- Navigation -->
-        <div class="mt-10 pt-8 border-t border-gray-200">
-          <a href="/blog/" class="inline-flex items-center gap-2 text-accent font-semibold hover:gap-3 transition-all group">
-            <svg class="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-            </svg>
-            Alle Artikel
-          </a>
+            <!-- CTA -->
+            <div class="mt-10 p-8 md:p-10 bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl text-center border border-gray-100">
+              <div class="max-w-xl mx-auto">
+                <span class="text-4xl mb-4 block">🚀</span>
+                <h3 class="text-2xl font-bold text-primary mb-4">Interesse an unseren Tests?</h3>
+                <p class="text-gray-600 mb-8 leading-relaxed">
+                  Vereinbaren Sie eine kostenlose Demo und erfahren Sie, wie FYLTURA
+                  Ihren Recruiting-Prozess verbessern kann.
+                </p>
+                <Button href="https://calendar.app.google/ufTeprSNtGCdtTUGA" variant="primary">
+                  Demo buchen
+                </Button>
+              </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="mt-10 pt-8 border-t border-gray-200">
+              <a href="/blog/" class="inline-flex items-center gap-2 text-accent font-semibold hover:gap-3 transition-all group">
+                <svg class="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+                Alle Artikel
+              </a>
+            </div>
+          </div>
+
+          <!-- Sidebar (desktop only) -->
+          <aside class="hidden lg:block">
+            <div class="sticky top-8 space-y-6">
+              <EmailSignupForm variant="sidebar" formId="signup-sidebar" />
+            </div>
+          </aside>
+
         </div>
       </div>
     </Section>
   </article>
+
+  <!-- Mobile floating signup bar — appears after 30% scroll -->
+  <div
+    id="mobile-signup-bar"
+    class="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 shadow-lg p-4 lg:hidden translate-y-full transition-transform duration-300"
+    aria-hidden="true"
+  >
+    <div class="max-w-lg mx-auto">
+      <p class="text-sm font-semibold text-primary mb-3 flex items-center gap-2">
+        <span>📥</span>
+        <span>SMB HR-Toolkit – 10 Fragen vor jedem Coding Test. Gratis PDF.</span>
+      </p>
+      <form id="mobile-signup-form" class="flex gap-2" novalidate>
+        <input type="hidden" name="utm_source" />
+        <input type="hidden" name="utm_medium" />
+        <input type="hidden" name="utm_campaign" />
+        <input
+          type="email"
+          name="email"
+          required
+          placeholder="Ihre E-Mail *"
+          autocomplete="email"
+          class="flex-1 min-w-0 px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary"
+        />
+        <button
+          type="submit"
+          class="bg-accent hover:bg-accent/90 text-white font-semibold text-sm rounded-lg px-4 py-2 whitespace-nowrap cursor-pointer"
+        >
+          Sichern
+        </button>
+        <button
+          type="button"
+          id="mobile-bar-close"
+          aria-label="Schließen"
+          class="text-gray-400 hover:text-gray-600 p-1 cursor-pointer"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </form>
+      <p class="mobile-bar-success hidden text-sm text-green-700 font-medium mt-2">
+        ✅ Bitte E-Mail bestätigen!
+      </p>
+      <p class="mobile-bar-error hidden text-xs text-red-600 mt-1"></p>
+      <label class="flex items-start gap-2 mt-2 cursor-pointer">
+        <input type="checkbox" id="mobile-consent" required class="mt-0.5 w-3.5 h-3.5 rounded border-gray-300 accent-primary cursor-pointer flex-shrink-0" />
+        <span class="text-xs text-gray-500 leading-relaxed">
+          Einwilligung zur E-Mail-Kontaktaufnahme.
+          <a href="/datenschutz/" class="underline hover:text-primary" target="_blank" rel="noopener">Datenschutz</a>
+        </span>
+      </label>
+    </div>
+  </div>
+
+  <script>
+    // Mobile scroll-trigger bar
+    (function () {
+      const bar = document.getElementById('mobile-signup-bar');
+      const closeBtn = document.getElementById('mobile-bar-close');
+      const articleBody = document.getElementById('article-body');
+      const mobileForm = document.getElementById('mobile-signup-form') as HTMLFormElement | null;
+      const successEl = bar?.querySelector<HTMLElement>('.mobile-bar-success');
+      const errorEl = bar?.querySelector<HTMLElement>('.mobile-bar-error');
+      const consentInput = document.getElementById('mobile-consent') as HTMLInputElement | null;
+
+      if (!bar || !articleBody) return;
+
+      let shown = false;
+      let dismissed = false;
+
+      // Populate UTM params
+      const params = new URLSearchParams(window.location.search);
+      for (const key of ['utm_source', 'utm_medium', 'utm_campaign']) {
+        const input = mobileForm?.querySelector<HTMLInputElement>(`[name="${key}"]`);
+        const val = params.get(key);
+        if (input && val) input.value = val;
+      }
+
+      function showBar() {
+        if (shown || dismissed) return;
+        shown = true;
+        bar!.classList.remove('translate-y-full');
+        bar!.setAttribute('aria-hidden', 'false');
+      }
+
+      function hideBar() {
+        bar!.classList.add('translate-y-full');
+        bar!.setAttribute('aria-hidden', 'true');
+      }
+
+      closeBtn?.addEventListener('click', () => { dismissed = true; hideBar(); });
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          // Show bar when 30% of article is scrolled past (article top is 30% above viewport)
+          if (entries[0]?.boundingClientRect.top < window.innerHeight * -0.3) {
+            showBar();
+          }
+        },
+        { threshold: 0 },
+      );
+      observer.observe(articleBody);
+
+      mobileForm?.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if (errorEl) errorEl.classList.add('hidden');
+
+        const emailInput = mobileForm.querySelector<HTMLInputElement>('[name="email"]');
+        const email = emailInput?.value.trim();
+        const consent = consentInput?.checked;
+
+        if (!email || !consent) {
+          if (errorEl) {
+            errorEl.textContent = !email ? 'E-Mail erforderlich.' : 'Einwilligung erforderlich.';
+            errorEl.classList.remove('hidden');
+          }
+          return;
+        }
+
+        const btn = mobileForm.querySelector<HTMLButtonElement>('button[type="submit"]');
+        if (btn) { btn.disabled = true; btn.textContent = '…'; }
+
+        const fd = new FormData(mobileForm);
+        fd.set('consent', '1');
+
+        try {
+          const res = await fetch('/api/subscribe', { method: 'POST', body: fd });
+          const json = await res.json() as { success?: boolean; error?: string };
+          if (json.success) {
+            mobileForm.classList.add('hidden');
+            if (consentInput) consentInput.parentElement!.classList.add('hidden');
+            successEl?.classList.remove('hidden');
+            setTimeout(hideBar, 3000);
+          } else {
+            if (errorEl) { errorEl.textContent = json.error ?? 'Fehler. Bitte erneut versuchen.'; errorEl.classList.remove('hidden'); }
+            if (btn) { btn.disabled = false; btn.textContent = 'Sichern'; }
+          }
+        } catch {
+          if (errorEl) { errorEl.textContent = 'Netzwerkfehler.'; errorEl.classList.remove('hidden'); }
+          if (btn) { btn.disabled = false; btn.textContent = 'Sichern'; }
+        }
+      });
+    })();
+  </script>
 </Layout>
