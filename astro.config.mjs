@@ -21,6 +21,7 @@ export default defineConfig({
           'https://fyltura.de/blog/die-big-five-das-geruest-unserer-persoenlichkeit/': '2026-05-06',
           'https://fyltura.de/blog/das-verkannte-potenzial-von-persoenlichkeitstests-fuer-die-personalauswahl/': '2026-05-06',
           'https://fyltura.de/blog/high-volume-recruiting-qualitaet-statt-quantitaet/': '2026-05-08',
+          'https://fyltura.de/demo/': '2026-05-08',
         };
         const lastmod = lastmodByUrl[item.url];
         if (lastmod) return { ...item, lastmod };

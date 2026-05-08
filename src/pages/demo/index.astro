@@ -1,0 +1,141 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Section from '../../components/Section.astro';
+import Button from '../../components/Button.astro';
+---
+
+<Layout
+  title="Demo buchen | FYLTURA — Coding Tests & Persönlichkeitstests"
+  description="Buchen Sie eine 20-minütige Live-Demo: Coding Tests, Persönlichkeitstests, Auswertung und Bewerber-Sicht in einem Termin. DSGVO-konform, Hosting in Deutschland."
+  canonical="/demo/"
+>
+  <meta slot="head" name="robots" content="index,follow" />
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-primary to-primary/90 text-white py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">
+        Demo buchen — Coding Tests &amp; Persönlichkeitstests bei FYLTURA
+      </h1>
+      <p class="text-xl md:text-2xl text-gray-200">
+        „20 Minuten. Live. Wir zeigen Ihnen Aufgaben für Ihren Stack, das Bewertungsraster und die Bewerber:innen-Sicht."
+      </p>
+    </div>
+  </section>
+
+  <!-- Booking widget -->
+  <Section bg="light">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-4">Jetzt Termin wählen</h2>
+      <p class="text-gray-600 mb-8">
+        Wählen Sie direkt einen passenden Slot. Die Demo dauert 20 Minuten und findet per Video statt.
+      </p>
+
+      <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 md:p-12">
+        <div class="flex flex-col items-center gap-6">
+          <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center">
+            <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <div>
+            <p class="text-lg font-semibold text-gray-900 mb-1">20-minütige Live-Demo</p>
+            <p class="text-gray-500">Kostenlos · Per Video · Kein Risiko</p>
+          </div>
+          <Button
+            href="https://calendar.app.google/ufTeprSNtGCdtTUGA"
+            variant="primary"
+            size="lg"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Termin buchen
+            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </Button>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Trust bullets -->
+  <Section bg="white">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-2xl font-bold text-center mb-10">Ihre Daten sind sicher</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <h3 class="font-semibold mb-2">DSGVO-konform</h3>
+          <p class="text-gray-600 text-sm">Vollständig konform mit der Datenschutz-Grundverordnung</p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+            </svg>
+          </div>
+          <h3 class="font-semibold mb-2">Hosting in Deutschland</h3>
+          <p class="text-gray-600 text-sm">Alle Daten verbleiben auf deutschen Servern</p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+          </div>
+          <h3 class="font-semibold mb-2">AVV inklusive</h3>
+          <p class="text-gray-600 text-sm">Auftragsverarbeitungsvertrag ist standardmäßig enthalten</p>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- FAQ -->
+  <Section bg="light">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-2xl font-bold text-center mb-10">Häufige Fragen zur Demo</h2>
+      <div class="space-y-4">
+        <details class="bg-white rounded-xl border border-gray-200 group">
+          <summary class="flex items-center justify-between px-6 py-4 cursor-pointer font-semibold text-gray-900 list-none">
+            Was passiert in der Demo?
+            <svg class="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </summary>
+          <div class="px-6 pb-5 text-gray-600">
+            In 20 Minuten zeigen wir Ihnen live: typische Coding-Test-Aufgaben für Ihren Tech-Stack, das automatische Bewertungsraster und wie die Bewerber:innen-Ansicht aussieht. Sie sehen die Plattform in Aktion — ohne Folien, ohne Verkaufspitch.
+          </div>
+        </details>
+
+        <details class="bg-white rounded-xl border border-gray-200 group">
+          <summary class="flex items-center justify-between px-6 py-4 cursor-pointer font-semibold text-gray-900 list-none">
+            Wer sollte teilnehmen?
+            <svg class="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </summary>
+          <div class="px-6 pb-5 text-gray-600">
+            Idealerweise nimmt jemand aus HR oder Recruiting teil, gern auch die zuständige Führungskraft oder ein Tech-Lead. Mehr als 3 Personen braucht es nicht — der Call ist kompakt und auf Entscheider ausgelegt.
+          </div>
+        </details>
+
+        <details class="bg-white rounded-xl border border-gray-200 group">
+          <summary class="flex items-center justify-between px-6 py-4 cursor-pointer font-semibold text-gray-900 list-none">
+            Was kostet das?
+            <svg class="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </summary>
+          <div class="px-6 pb-5 text-gray-600">
+            Die Demo ist kostenlos und unverbindlich. Wenn Sie danach ein Angebot wünschen, erstellen wir es Ihnen auf Basis Ihres konkreten Bedarfs — transparent und ohne versteckte Gebühren.
+          </div>
+        </details>
+      </div>
+    </div>
+  </Section>
+</Layout>
