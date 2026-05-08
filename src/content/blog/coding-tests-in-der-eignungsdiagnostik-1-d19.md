@@ -63,7 +63,7 @@ Asynchrone Abgabe gefolgt von einer 30–45-minütigen Live-Session, in der die 
 
 **Unsere Empfehlung 2026:** Hybrid für Senior-Rollen und für alle Stellen, bei denen die Folgekosten einer Fehlbesetzung hoch sind. Reines Live-Coding für High-Volume-Junior-Recruiting, reines Take-Home nur dann, wenn die KI-Cheat-Resistenz der Aufgabe explizit eingebaut ist (siehe nächster Abschnitt).
 
-> **Demo-CTA:** Sie wollen sehen, wie ein DSGVO-konformer Hybrid-Coding-Test in der Praxis aussieht? [Buchen Sie eine 20-minütige FYLTURA-Demo](https://calendar.app.google/ufTeprSNtGCdtTUGA) — wir zeigen Ihnen Aufgaben, Bewertung und Bewerber-Sicht in einem Termin.
+> **Demo-CTA:** Sie wollen sehen, wie ein DSGVO-konformer Hybrid-Coding-Test in der Praxis aussieht? [Buchen Sie eine 20-minütige FYLTURA-Demo](https://www.fyltura.de/demo/) — wir zeigen Ihnen Aufgaben, Bewertung und Bewerber-Sicht in einem Termin.
 
 ## AI-Cheat-Resistenz: Coding Tests im Zeitalter von Copilot und ChatGPT
 
@@ -155,4 +155,4 @@ Coding Tests sind 2026 das objektivste Instrument der Tech-Eignungsdiagnostik �
 
 FYLTURA liefert die Plattform, die Aufgaben-Bibliothek und das Bewertungsraster — gehostet in Deutschland, mit AVV und pseudonymisierter Bewertung als Standardoption.
 
-> **Coding Test bei FYLTURA buchen** — In einer 20-minütigen Demo zeigen wir Ihnen Aufgaben für Ihren Stack, das Bewertungsraster und die Bewerber:innen-Sicht. [Termin auswählen →](https://calendar.app.google/ufTeprSNtGCdtTUGA)
+> **Coding Test bei FYLTURA buchen** — In einer 20-minütigen Demo zeigen wir Ihnen Aufgaben für Ihren Stack, das Bewertungsraster und die Bewerber:innen-Sicht. [Termin auswählen →](https://www.fyltura.de/demo/)
