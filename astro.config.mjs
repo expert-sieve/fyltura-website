@@ -6,7 +6,7 @@ import cloudflare from '@astrojs/cloudflare';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://fyltura.de',
+  site: 'https://www.fyltura.de',
   trailingSlash: 'always',
 
   vite: {
@@ -18,12 +18,12 @@ export default defineConfig({
       filter: (page) => !page.includes('/404'),
       serialize(item) {
         const lastmodByUrl = {
-          'https://fyltura.de/blog/die-big-five-das-geruest-unserer-persoenlichkeit/': '2026-05-06',
-          'https://fyltura.de/blog/das-verkannte-potenzial-von-persoenlichkeitstests-fuer-die-personalauswahl/': '2026-05-06',
-          'https://fyltura.de/blog/high-volume-recruiting-qualitaet-statt-quantitaet/': '2026-05-08',
-          'https://fyltura.de/demo/': '2026-05-08',
-          'https://fyltura.de/blog/coding-tests-in-der-eignungsdiagnostik-1-d19/': '2026-05-08',
-          'https://fyltura.de/blog/der-intelligenztests-als-effektives-instrument-in-der-personalauswahl/': '2026-05-08',
+          'https://www.fyltura.de/blog/die-big-five-das-geruest-unserer-persoenlichkeit/': '2026-05-06',
+          'https://www.fyltura.de/blog/das-verkannte-potenzial-von-persoenlichkeitstests-fuer-die-personalauswahl/': '2026-05-06',
+          'https://www.fyltura.de/blog/high-volume-recruiting-qualitaet-statt-quantitaet/': '2026-05-08',
+          'https://www.fyltura.de/demo/': '2026-05-08',
+          'https://www.fyltura.de/blog/coding-tests-in-der-eignungsdiagnostik-1-d19/': '2026-05-08',
+          'https://www.fyltura.de/blog/der-intelligenztests-als-effektives-instrument-in-der-personalauswahl/': '2026-05-08',
         };
         const lastmod = lastmodByUrl[item.url];
         if (lastmod) return { ...item, lastmod };
