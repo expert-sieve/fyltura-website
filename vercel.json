@@ -1,6 +1,16 @@
 {
   "redirects": [
     {
+      "source": "/codility-alternative",
+      "destination": "/fuer-mittelstand/",
+      "statusCode": 301
+    },
+    {
+      "source": "/codility-alternative/",
+      "destination": "/fuer-mittelstand/",
+      "statusCode": 301
+    },
+    {
       "source": "/blog/coding-tests-in-der-eignungsdiagnostik-2-d35/",
       "destination": "/blog/coding-tests-in-der-eignungsdiagnostik-1-d19/",
       "statusCode": 301
