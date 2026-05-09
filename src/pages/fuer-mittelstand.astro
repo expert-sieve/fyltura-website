@@ -1,0 +1,683 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
+
+const faqItems = [
+  {
+    q: 'Ist FYLTURA DSGVO-konform?',
+    a: 'Ja. Hosting komplett in Deutschland. AVV und VVT bereit. Keine Datenweitergabe in Drittländer.',
+  },
+  {
+    q: 'Was kostet ein Test?',
+    a: 'Pay-per-Test, kein Jahresabo. Genaue Staffel im Demo-Gespräch — typischerweise deutlich unter den Lizenzkosten der großen Anbieter.',
+  },
+  {
+    q: 'Wie schnell bekomme ich das Ergebnis?',
+    a: 'In der Regel innerhalb von 6 Stunden, spätestens am nächsten Werktag.',
+  },
+  {
+    q: 'Bewertet das nur eine KI?',
+    a: 'Nein. Jeder Bericht wird von einem qualifizierten Software-Engineer gegengelesen. Kernunterschied zu rein automatischen Plattformen.',
+  },
+  {
+    q: 'Wir haben keine Tech-HR — verstehen wir den Bericht?',
+    a: 'Ja, dafür ist FYLTURA gebaut. Klartext-Empfehlung („Einstellen / Bedingt / Ablehnen“) + Begründung. Tech-Lead muss nur nicken.',
+  },
+  {
+    q: 'Können wir auch Persönlichkeitstests machen?',
+    a: 'Ja. Persönlichkeitstest (Big Five-basiert) ist optional zubuchbar.',
+  },
+  {
+    q: 'Wie integriert sich das in unser ATS?',
+    a: 'Test-Link per Mail, PDF-Ergebnis per Mail oder Download. Direkte ATS-Integration auf Anfrage.',
+  },
+  {
+    q: 'Ab wie vielen Stellen lohnt sich FYLTURA?',
+    a: 'Schon ab einer einzigen Entwickler-Stelle pro Jahr. Pay-per-Test = keine Fixkosten.',
+  },
+];
+
+const comparisonRows = [
+  {
+    criterion: 'Auswertung durch echte Engineers',
+    fyltura: { icon: '✅', text: 'Ja, jeder Bericht' },
+    codility: { icon: '❌', text: 'Rein automatisch' },
+    hackerrank: { icon: '❌', text: 'Rein automatisch' },
+  },
+  {
+    criterion: 'DSGVO-konform, Hosting in DE/EU',
+    fyltura: { icon: '✅', text: 'Hosting in Deutschland, AVV inklusive' },
+    codility: { icon: '⚠️', text: 'Datenverarbeitung außerhalb EU möglich' },
+    hackerrank: { icon: '⚠️', text: 'US-basiert' },
+  },
+  {
+    criterion: 'Preismodell',
+    fyltura: { icon: '✅', text: 'Pay-per-Test (ab niedriger zweistelliger €-Bereich pro Test)' },
+    codility: { icon: '❌', text: 'Jahresabo, ab ~6.000 €/Jahr' },
+    hackerrank: { icon: '❌', text: 'Jahresabo, ab ~5.000 €/Jahr' },
+  },
+  {
+    criterion: 'Geeignet für 1–10 Hires/Jahr',
+    fyltura: { icon: '✅', text: 'Optimiert dafür' },
+    codility: { icon: '❌', text: 'Lohnt sich erst ab vielen Hires' },
+    hackerrank: { icon: '❌', text: 'Lohnt sich erst ab vielen Hires' },
+  },
+  {
+    criterion: 'Bericht für nicht-technische HR',
+    fyltura: { icon: '✅', text: 'Klartext-Empfehlung + Ampel' },
+    codility: { icon: '❌', text: 'Score-fokussiert' },
+    hackerrank: { icon: '❌', text: 'Score-fokussiert' },
+  },
+  {
+    criterion: 'Persönlichkeitstest integriert',
+    fyltura: { icon: '✅', text: 'Ja, optional' },
+    codility: { icon: '❌', text: 'Nein' },
+    hackerrank: { icon: '❌', text: 'Nein' },
+  },
+  {
+    criterion: 'Sprache',
+    fyltura: { icon: '✅', text: 'Deutsch + Englisch' },
+    codility: { icon: '⚠️', text: 'Englisch dominant' },
+    hackerrank: { icon: '⚠️', text: 'Englisch dominant' },
+  },
+];
+---
+
+<Layout
+  title="Coding-Test für den Mittelstand — DSGVO-konform, in 6 Stunden | FYLTURA"
+  description="Objektive Coding-Assessments für mittelständische HR-Abteilungen ohne IT-Hintergrund. Hosting in Deutschland, Auswertung durch echte Engineers, Pay-per-Test. Demo anfordern."
+  canonical="/fuer-mittelstand/"
+  ogImage="/og-image.jpg"
+>
+  <Fragment slot="head">
+    <link rel="alternate" hreflang="de-DE" href="https://www.fyltura.de/fuer-mittelstand/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.fyltura.de/fuer-mittelstand/" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Product structured data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "FYLTURA Coding-Assessment",
+      "description": "Objektive Coding-Assessments für mittelständische HR-Abteilungen. Auswertung durch echte Engineers, DSGVO-konform, Hosting in Deutschland.",
+      "brand": { "@type": "Brand", "name": "FYLTURA" },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "billingDuration": "P0Y",
+          "unitText": "pro Test"
+        }
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "12"
+      }
+    })} />
+
+    <!-- FAQPage structured data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqItems.map(item => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a,
+        }
+      }))
+    })} />
+
+    <!-- GA4 Consent Mode v2 defaults (fires before gtag loads) -->
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': 'denied',
+        'wait_for_update': 500,
+      });
+    </script>
+
+    <!-- GA4 (measurement ID placeholder — replace with real ID from CEO) -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX', {
+        'anonymize_ip': true,
+        'cookie_flags': 'SameSite=None;Secure',
+      });
+    </script>
+  </Fragment>
+
+  <!-- ===== HERO ===== -->
+  <section class="bg-white pt-16 pb-12 md:pt-24 md:pb-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <!-- Text column -->
+        <div>
+          <p class="text-xs font-medium text-gray-500 uppercase tracking-widest mb-4">
+            Coding-Tests &amp; Persönlichkeitstests für den Mittelstand
+          </p>
+          <h1 class="text-3xl md:text-5xl font-bold text-primary leading-tight tracking-tight">
+            Sie sind kein Software-Unternehmen — müssen aber Entwickler einstellen?
+          </h1>
+          <p class="mt-5 text-lg text-gray-700 max-w-xl leading-relaxed">
+            FYLTURA gibt Ihrer Personalabteilung ein objektives, DSGVO-konformes
+            Coding-Assessment in die Hand. In 6 Stunden erhalten Sie eine Empfehlung,
+            die Ihr Tech-Lead in 10 Minuten bestätigen kann.
+          </p>
+
+          <!-- Bullet row -->
+          <div class="mt-6 flex flex-col sm:flex-row gap-4 sm:gap-6 text-sm text-gray-700">
+            <div><span class="font-semibold">⚡ Ergebnis in 6 Stunden</span> — nicht Tage.</div>
+            <div><span class="font-semibold">🤝 Mensch + Maschine</span> — KI-Auswertung, geprüft von echten Entwickler:innen.</div>
+            <div><span class="font-semibold">🇩🇪 DSGVO-konform</span> — Hosting in Deutschland, AVV ready.</div>
+          </div>
+
+          <!-- CTAs -->
+          <div class="mt-8 flex flex-col sm:flex-row gap-4">
+            <Button href="/demo/" variant="primary" size="lg" class="demo-cta" data-cta-position="hero-top">
+              Demo anfordern
+            </Button>
+            <Button href="/coding-tests/" variant="outline" size="lg">
+              Mustertest ansehen
+            </Button>
+          </div>
+
+          <p class="mt-6 text-sm text-gray-500 italic">
+            Vertraut von Personalverantwortlichen aus Industrie, Pharma und Engineering — von 25 bis 200 Mitarbeitenden.
+          </p>
+        </div>
+
+        <!-- Hero visual: Report mockup (built as styled HTML per design spec) -->
+        <div class="hidden lg:block">
+          <div class="relative" style="transform: rotate(-2deg);">
+            <div class="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden max-w-md mx-auto">
+              <div class="bg-primary text-white text-xs px-4 py-2 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-red-400"></span>
+                <span class="w-2 h-2 rounded-full bg-yellow-400"></span>
+                <span class="w-2 h-2 rounded-full bg-green-400"></span>
+                <span class="ml-2">Kandidaten-Bericht — Max M. — Backend-Entwickler</span>
+              </div>
+              <div class="p-5 space-y-4">
+                <div class="flex items-center gap-3">
+                  <img src="/images/fyltura_logo.svg" alt="" class="h-5 w-auto" />
+                  <span class="text-xs text-gray-400">Kandidaten-Bericht</span>
+                </div>
+                <div class="grid grid-cols-2 gap-2 text-xs text-gray-600">
+                  <div><span class="text-gray-400">Kandidat:</span> Max M.</div>
+                  <div><span class="text-gray-400">Position:</span> Backend-Entwickler</div>
+                  <div><span class="text-gray-400">Test:</span> Python · Mittel</div>
+                  <div><span class="text-gray-400">Datum:</span> 08.05.2026</div>
+                </div>
+                <div class="border-t pt-3 flex items-center justify-between">
+                  <span class="text-sm font-semibold text-gray-700">EMPFEHLUNG</span>
+                  <span class="bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full">EINSTELLEN</span>
+                </div>
+                <div class="space-y-2">
+                  <div class="flex items-center gap-3">
+                    <span class="text-xs text-gray-500 w-24">Gesamt-Score</span>
+                    <div class="flex-1 bg-gray-100 rounded-full h-2">
+                      <div class="bg-primary h-2 rounded-full" style="width: 78%"></div>
+                    </div>
+                    <span class="text-xs font-medium text-gray-700">78/100</span>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <span class="text-xs text-gray-500 w-24">Code-Qualität</span>
+                    <div class="flex-1 bg-gray-100 rounded-full h-2">
+                      <div class="bg-primary h-2 rounded-full" style="width: 72%"></div>
+                    </div>
+                    <span class="text-xs font-medium text-gray-700">72/100</span>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <span class="text-xs text-gray-500 w-24">Problemlösung</span>
+                    <div class="flex-1 bg-gray-100 rounded-full h-2">
+                      <div class="bg-primary h-2 rounded-full" style="width: 88%"></div>
+                    </div>
+                    <span class="text-xs font-medium text-gray-700">88/100</span>
+                  </div>
+                </div>
+                <div class="border-t pt-3">
+                  <p class="text-xs font-semibold text-gray-700 mb-1">Engineer-Review (Zusammenfassung)</p>
+                  <p class="text-xs text-gray-500 italic leading-relaxed">
+                    &bdquo;Kandidat zeigt solides Verständnis von OOP und Datenbankabfragen. Kleinere Lücken bei Fehlerbehandlung.&ldquo;
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TRUST BLOCK ===== -->
+  <section class="bg-background py-12 md:py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-xl md:text-2xl font-semibold text-primary max-w-2xl mx-auto mb-10">
+        Personalabteilungen, die FYLTURA nutzen, müssen keine Code-Reviewer sein.
+      </h2>
+
+      <!-- Logo row (text fallback until SVG assets are attached) -->
+      <div class="flex items-center justify-center gap-8 md:gap-12 mb-10">
+        <span class="text-gray-400 font-semibold text-sm md:text-base opacity-60 hover:opacity-100 transition-opacity">B. Braun</span>
+        <span class="text-gray-400 font-semibold text-sm md:text-base opacity-60 hover:opacity-100 transition-opacity">ExB</span>
+        <span class="text-gray-400 font-semibold text-sm md:text-base opacity-60 hover:opacity-100 transition-opacity">Wavelabs</span>
+      </div>
+
+      <div class="w-24 border-t border-gray-300 mx-auto mb-10"></div>
+
+      <!-- Testimonial -->
+      <div class="max-w-2xl mx-auto">
+        <span class="text-5xl text-accent leading-none block mb-2">&bdquo;</span>
+        <blockquote class="text-lg text-gray-700 italic leading-relaxed">
+          Wir mussten Entwickler einstellen, ohne selbst Software-Profis zu sein.
+          FYLTURA hat uns in jeder Runde vor einer teuren Fehlbesetzung bewahrt —
+          bei einem Bruchteil der Kosten klassischer Tests.
+        </blockquote>
+        <p class="mt-4 text-sm text-gray-500">
+          — Personalleitung, mittelständischer Industriebetrieb (DACH)
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DIFFERENTIATORS (3 Columns) ===== -->
+  <section class="bg-white py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-xs font-medium text-gray-500 uppercase tracking-widest text-center mb-2">
+        Warum der Mittelstand FYLTURA wählt
+      </p>
+      <h2 class="text-2xl md:text-3xl font-bold text-primary text-center max-w-2xl mx-auto mb-12">
+        Warum der Mittelstand FYLTURA wählt — nicht Codility oder HackerRank.
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="border border-gray-200 rounded-xl p-7 shadow-sm hover:shadow-md hover:border-primary transition-all duration-200">
+          <div class="text-3xl mb-4">⏱</div>
+          <h3 class="text-lg font-semibold text-primary mb-3">6 Stunden, nicht 6 Tage</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Kandidat:innen lösen die Aufgabe innerhalb eines Tages.
+            Sie bekommen die Auswertung am gleichen Werktag.
+          </p>
+        </div>
+        <div class="border border-gray-200 rounded-xl p-7 shadow-sm hover:shadow-md hover:border-primary transition-all duration-200">
+          <div class="text-3xl mb-4">🧠</div>
+          <h3 class="text-lg font-semibold text-primary mb-3">Mensch im Loop</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Jeder Bericht wird von einem echten Software-Engineer gegengelesen —
+            nicht nur von der KI. So vermeiden Sie False Positives.
+          </p>
+        </div>
+        <div class="border border-gray-200 rounded-xl p-7 shadow-sm hover:shadow-md hover:border-primary transition-all duration-200">
+          <div class="text-3xl mb-4">💶</div>
+          <h3 class="text-lg font-semibold text-primary mb-3">Pay-per-Test</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Keine Lizenzgebühr, kein Jahres-Abo. Sie zahlen nur, wenn Sie wirklich testen.
+            Ideal bei wenigen Stellen pro Jahr.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== INLINE CTA [3b] ===== -->
+  <section class="bg-accent py-8 md:py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      <p class="text-lg md:text-xl font-semibold text-white text-center md:text-left">
+        Klingt nach Ihrer Pipeline? 20 Minuten reichen für eine echte Einschätzung.
+      </p>
+      <a
+        href="/demo/"
+        class="demo-cta inline-flex items-center justify-center bg-white text-primary font-semibold px-6 py-3 rounded-md hover:bg-gray-50 transition-colors shrink-0"
+        data-cta-position="inline-differentiators"
+      >
+        Demo anfordern
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== COMPARISON TABLE ===== -->
+  <section id="comparison-table" class="bg-background py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl md:text-3xl font-bold text-primary text-center mb-12">
+        FYLTURA vs. Codility vs. HackerRank — auf das Wesentliche reduziert.
+      </h2>
+
+      <!-- Desktop table -->
+      <div class="hidden md:block overflow-hidden rounded-lg shadow-sm border border-gray-200 bg-white">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-primary text-white">
+              <th class="text-left px-4 py-3 font-semibold w-[30%]">Kriterium</th>
+              <th class="text-left px-4 py-3 font-semibold w-[26%]">
+                FYLTURA <span class="ml-1 bg-accent text-white text-xs px-2 py-0.5 rounded-full">Ihre Wahl</span>
+              </th>
+              <th class="text-left px-4 py-3 font-semibold w-[22%]">Codility</th>
+              <th class="text-left px-4 py-3 font-semibold w-[22%]">HackerRank</th>
+            </tr>
+          </thead>
+          <tbody>
+            {comparisonRows.map((row, i) => (
+              <tr class={i % 2 === 1 ? 'bg-gray-50' : 'bg-white'}>
+                <td class="px-4 py-3 font-medium text-gray-800">{row.criterion}</td>
+                <td class="px-4 py-3 border-l-3 border-accent">
+                  <span class="mr-1">{row.fyltura.icon}</span> {row.fyltura.text}
+                </td>
+                <td class="px-4 py-3 text-gray-600">
+                  <span class="mr-1">{row.codility.icon}</span> {row.codility.text}
+                </td>
+                <td class="px-4 py-3 text-gray-600">
+                  <span class="mr-1">{row.hackerrank.icon}</span> {row.hackerrank.text}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Mobile cards -->
+      <div class="md:hidden space-y-3">
+        {comparisonRows.map((row) => (
+          <div class="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+            <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">{row.criterion}</p>
+            <div class="space-y-2">
+              <div class="bg-blue-50 rounded-md px-3 py-2 text-sm">
+                <span class="font-semibold text-primary">★ FYLTURA</span>
+                <span class="ml-2">{row.fyltura.icon} {row.fyltura.text}</span>
+              </div>
+              <div class="px-3 py-2 text-sm text-gray-600">
+                <span class="font-medium">Codility</span>
+                <span class="ml-2">{row.codility.icon} {row.codility.text}</span>
+              </div>
+              <div class="px-3 py-2 text-sm text-gray-600">
+                <span class="font-medium">HackerRank</span>
+                <span class="ml-2">{row.hackerrank.icon} {row.hackerrank.text}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <p class="text-xs text-gray-500 text-center mt-4">
+        Stand: Mai 2026. Wettbewerber-Angaben laut öffentlich verfügbaren Quellen.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== INLINE CTA [4b] ===== -->
+  <section class="bg-white py-12">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white border border-gray-200 rounded-xl shadow-sm p-8 md:p-10 text-center">
+        <h3 class="text-xl font-semibold text-primary">Kein Jahresabo. Kein IT-Wissen nötig. Einfach testen.</h3>
+        <p class="text-gray-500 mt-2">Ergebnis in 6 Stunden. Nur bezahlen, wenn Sie wirklich testen.</p>
+        <div class="mt-6">
+          <Button href="/demo/" variant="primary" class="demo-cta" data-cta-position="inline-comparison">
+            Demo anfordern
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="bg-white py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl md:text-3xl font-bold text-primary text-center mb-14">
+        In drei Schritten zur fundierten Einstellungsentscheidung.
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+        <!-- Step 1 -->
+        <div class="text-center">
+          <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto">1</div>
+          <h3 class="text-lg font-semibold text-primary mt-5 mb-3">Stelle definieren.</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Sie wählen Sprache, Schwierigkeit und Schwerpunkt — oder lassen sich von uns beraten.
+          </p>
+          <span class="inline-block mt-3 text-xs text-gray-500 bg-gray-100 border border-gray-200 px-3 py-1 rounded-full">
+            Aufwand: 10 Minuten
+          </span>
+        </div>
+        <!-- Step 2 -->
+        <div class="text-center">
+          <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto">2</div>
+          <h3 class="text-lg font-semibold text-primary mt-5 mb-3">Kandidat:in testet.</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Einladung per Mail. Test wird im Browser gelöst. Anti-Fraud (KI-Erkennung, Browser-Lock).
+          </p>
+          <span class="inline-block mt-3 text-xs text-gray-500 bg-gray-100 border border-gray-200 px-3 py-1 rounded-full">
+            Aufwand für Sie: 0 Minuten
+          </span>
+        </div>
+        <!-- Step 3 -->
+        <div class="text-center">
+          <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto">3</div>
+          <h3 class="text-lg font-semibold text-primary mt-5 mb-3">Bericht prüfen.</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Sie erhalten einen Klartext-Bericht mit Empfehlung.
+            Ihr Tech-Lead bestätigt in 10 Minuten — statt selbst auszuwerten.
+          </p>
+          <span class="inline-block mt-3 text-xs text-gray-500 bg-gray-100 border border-gray-200 px-3 py-1 rounded-full">
+            Aufwand: 10 Minuten für Tech-Lead
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section id="faq" class="bg-background py-16 md:py-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl md:text-3xl font-bold text-primary text-center mb-10">
+        Häufig gestellte Fragen
+      </h2>
+
+      <div class="space-y-2" id="faq-accordion">
+        {faqItems.map((item, index) => (
+          <div class="bg-white border border-gray-200 rounded-lg overflow-hidden faq-item" data-faq-index={index}>
+            <button
+              class="w-full flex items-center justify-between px-5 py-4 text-left font-semibold text-gray-800 hover:bg-gray-50 transition-colors"
+              aria-expanded={index === 0 ? 'true' : 'false'}
+              data-faq-question={item.q}
+            >
+              <span>{item.q}</span>
+              <svg class="w-5 h-5 text-primary shrink-0 ml-4 transition-transform duration-200 faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class={`faq-answer px-5 pb-4 text-sm text-gray-600 leading-relaxed ${index === 0 ? '' : 'hidden'}`}>
+              <div class="border-t-2 border-accent pt-3">
+                {item.a}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FINAL CTA ===== -->
+  <section class="bg-primary py-20 md:py-24">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-white">
+        Reden Sie 20 Minuten mit uns — und entscheiden Sie selbst.
+      </h2>
+      <p class="mt-4 text-lg text-white/80 max-w-xl mx-auto leading-relaxed">
+        Wir zeigen Ihnen einen echten Bericht, beantworten Ihre Fragen zu DSGVO
+        und Preis, und klären, ob FYLTURA zu Ihrer Pipeline passt. Kein Vertrieb-Theater.
+      </p>
+      <a
+        href="/demo/"
+        class="demo-cta inline-flex items-center justify-center mt-10 bg-accent text-white font-bold px-10 py-4 rounded-md text-lg hover:bg-accent/90 transition-all hover:-translate-y-0.5 shadow-lg"
+        data-cta-position="final"
+      >
+        Demo anfordern
+      </a>
+      <p class="mt-4 text-sm text-white/60">
+        Antwort innerhalb eines Werktags. Keine Kreditkarte, keine Verpflichtung.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== MOBILE STICKY BOTTOM BAR ===== -->
+  <div id="mobile-sticky-cta" class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-3 z-[200] shadow-[0_-2px_12px_rgba(0,0,0,0.1)] md:hidden hidden">
+    <a
+      href="/demo/"
+      class="demo-cta block w-full bg-primary text-white text-center font-semibold py-3.5 rounded-md hover:bg-primary/90 transition-colors"
+      data-cta-position="sticky-mobile"
+    >
+      Demo anfordern
+    </a>
+  </div>
+</Layout>
+
+<style>
+  .faq-item[data-open="true"] .faq-chevron {
+    transform: rotate(180deg);
+  }
+</style>
+
+<script>
+  // FAQ accordion (only-one-open)
+  document.addEventListener('DOMContentLoaded', () => {
+    const accordion = document.getElementById('faq-accordion');
+    if (!accordion) return;
+
+    // Set initial open state
+    const firstItem = accordion.querySelector('.faq-item');
+    if (firstItem) firstItem.setAttribute('data-open', 'true');
+
+    accordion.addEventListener('click', (e) => {
+      const button = (e.target as HTMLElement).closest('button[data-faq-question]');
+      if (!button) return;
+
+      const item = button.closest('.faq-item') as HTMLElement;
+      if (!item) return;
+
+      const answer = item.querySelector('.faq-answer');
+      const isOpen = item.getAttribute('data-open') === 'true';
+
+      // Close all
+      accordion.querySelectorAll('.faq-item').forEach((el) => {
+        el.setAttribute('data-open', 'false');
+        el.querySelector('button')?.setAttribute('aria-expanded', 'false');
+        el.querySelector('.faq-answer')?.classList.add('hidden');
+      });
+
+      // Toggle clicked
+      if (!isOpen) {
+        item.setAttribute('data-open', 'true');
+        button.setAttribute('aria-expanded', 'true');
+        answer?.classList.remove('hidden');
+
+        // GA4: pricing FAQ click tracking
+        const question = button.getAttribute('data-faq-question');
+        if (question === 'Was kostet ein Test?' && typeof gtag === 'function') {
+          gtag('event', 'pricing_faq_opened', { event_category: 'engagement' });
+        }
+      }
+    });
+  });
+
+  // Mobile sticky CTA: show after hero, hide when final CTA visible
+  document.addEventListener('DOMContentLoaded', () => {
+    const stickyBar = document.getElementById('mobile-sticky-cta');
+    if (!stickyBar || window.innerWidth >= 768) return;
+
+    const heroSection = document.querySelector('section:first-of-type');
+    const finalCTA = document.querySelector('section.bg-primary:last-of-type');
+    if (!heroSection) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.target === heroSection) {
+            // Show sticky when hero is NOT visible (scrolled past it)
+            if (!entry.isIntersecting) {
+              stickyBar.classList.remove('hidden');
+            } else {
+              stickyBar.classList.add('hidden');
+            }
+          }
+          if (entry.target === finalCTA) {
+            // Hide sticky when final CTA is visible
+            if (entry.isIntersecting) {
+              stickyBar.classList.add('hidden');
+            }
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(heroSection);
+    if (finalCTA) observer.observe(finalCTA);
+  });
+
+  // Comparison table 50% visibility tracking
+  document.addEventListener('DOMContentLoaded', () => {
+    const table = document.getElementById('comparison-table');
+    if (!table) return;
+
+    let fired = false;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (fired) return;
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+            fired = true;
+            if (typeof gtag === 'function') {
+              gtag('event', 'comparison_table_viewed', { event_category: 'engagement' });
+            }
+            observer.disconnect();
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    observer.observe(table);
+  });
+
+  // CTA click tracking
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.demo-cta').forEach((el) => {
+      el.addEventListener('click', () => {
+        const position = (el as HTMLElement).dataset.ctaPosition || 'unknown';
+        const eventMap: Record<string, string> = {
+          'hero-top': 'cta_click_demo_top',
+          'sticky-mobile': 'cta_click_demo_sticky',
+          'final': 'cta_click_demo_final',
+        };
+        const eventName = eventMap[position] || 'cta_click_demo';
+        if (typeof gtag === 'function') {
+          gtag('event', eventName, { event_category: 'conversion', cta_position: position });
+        }
+      });
+    });
+  });
+
+  // Capture UTM params to sessionStorage for CRM forwarding
+  document.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+    const utmData: Record<string, string> = {};
+    utmKeys.forEach((key) => {
+      const val = params.get(key);
+      if (val) utmData[key] = val;
+    });
+    if (Object.keys(utmData).length > 0) {
+      sessionStorage.setItem('fyltura_utm', JSON.stringify(utmData));
+    }
+  });
+</script>
