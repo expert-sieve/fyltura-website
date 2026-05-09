@@ -1,0 +1,77 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
+---
+
+<Layout
+  title="Vielen Dank für Ihre Anfrage — FYLTURA"
+  description="Ihre Demo-Anfrage wurde erfolgreich übermittelt. Wir melden uns innerhalb eines Werktags bei Ihnen."
+  canonical="/demo-anfrage-erhalten/"
+>
+  <Fragment slot="head">
+    <meta name="robots" content="noindex, nofollow" />
+
+    <!-- GA4 conversion event: fires on page view (server-confirmed submit redirect) -->
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+
+      // Fire demo_request_submitted on page load
+      if (typeof gtag === 'function') {
+        gtag('event', 'demo_request_submitted', {
+          event_category: 'conversion',
+          value: 1,
+        });
+      }
+
+      // Google Ads conversion (placeholder — uncomment and fill when Ads account is set up)
+      // gtag('event', 'conversion', {
+      //   'send_to': 'AW-XXXXXXXXX/XXXXXXXXXXXXXXXXXXXX',
+      //   'value': 1.0,
+      //   'currency': 'EUR',
+      // });
+    </script>
+  </Fragment>
+
+  <section class="bg-white py-24 md:py-32">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+        </svg>
+      </div>
+
+      <h1 class="text-3xl md:text-4xl font-bold text-primary mb-4">
+        Vielen Dank für Ihre Anfrage!
+      </h1>
+
+      <p class="text-lg text-gray-600 leading-relaxed mb-8">
+        Wir haben Ihre Demo-Anfrage erhalten und melden uns innerhalb eines Werktags bei Ihnen.
+        In der Zwischenzeit können Sie sich gerne auf unserer Seite umsehen.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <Button href="/" variant="primary">
+          Zurück zur Startseite
+        </Button>
+        <Button href="/coding-tests/" variant="outline">
+          Mehr über Coding Tests
+        </Button>
+      </div>
+
+      <div class="mt-12 p-6 bg-background rounded-lg text-left">
+        <h2 class="text-lg font-semibold text-primary mb-3">Noch Fragen?</h2>
+        <p class="text-sm text-gray-600 mb-2">
+          Schreiben Sie uns jederzeit:
+        </p>
+        <a href="mailto:kontakt@fyltura.de" class="text-accent hover:underline font-medium">
+          kontakt@fyltura.de
+        </a>
+        <span class="text-gray-400 mx-2">|</span>
+        <a href="tel:+4934139294804" class="text-accent hover:underline font-medium">
+          +49 341-39 29 48 04
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

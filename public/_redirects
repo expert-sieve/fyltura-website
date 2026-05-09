@@ -15,6 +15,14 @@
 /datenschutz /datenschutz/ 301
 /agb /agb/ 301
 
+# /codility-alternative → /fuer-mittelstand (FYL-683)
+/codility-alternative /fuer-mittelstand/ 301
+/codility-alternative/ /fuer-mittelstand/ 301
+
+# Trailing slash for new pages
+/fuer-mittelstand /fuer-mittelstand/ 301
+/demo-anfrage-erhalten /demo-anfrage-erhalten/ 301
+
 # Coding Tests Teil 2 consolidated into Teil 1 (FYL-712/FYL-721)
 /blog/coding-tests-in-der-eignungsdiagnostik-2-d35/ /blog/coding-tests-in-der-eignungsdiagnostik-1-d19/ 301
 /blog/coding-tests-in-der-eignungsdiagnostik-2-d35 /blog/coding-tests-in-der-eignungsdiagnostik-1-d19/ 301
